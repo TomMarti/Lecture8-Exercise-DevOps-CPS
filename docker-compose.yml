@@ -15,6 +15,7 @@ services:
     #   -  /Users/erdem/Development/uav-llm/px4_agent:/root/px4_agent
     volumes:
       - ./ros2_ws:/root/ros2_ws
+      - ./worlds/perception.sdf:/root/PX4-Autopilot/Tools/simulation/gz/worlds/perception.sdf
 
     environment:
       - DISPLAY=:1
