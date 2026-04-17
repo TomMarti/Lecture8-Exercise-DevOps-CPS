@@ -27,3 +27,17 @@ docker compose up
     The first time you run these command it may take a few minutes. At the end, you may see a quadcopter on the VNC window.
 
 ## Aufgabe 1
+After launching the container
+
+1. Run the world (in a new terminal)
+```sh
+docker exec -it px4_sitl bash
+cd /root/PX4-Autopilot
+PX4_GZ_WORLD=perception make px4_sitl gz_x500_mono_cam
+```
+
+2. Launch the Gazebo-Ros2 bridge (in a new terminal)
+```sh
+docker exec -it px4_sitl bash
+ros2 run ros_gz_bridge parameter_bridge --ros-args -p config_file:=/root/config/gz_ros_bridge.yaml
+```
