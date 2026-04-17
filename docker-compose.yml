@@ -13,6 +13,8 @@ services:
     
     # volumes:
     #   -  /Users/erdem/Development/uav-llm/px4_agent:/root/px4_agent
+    volumes:
+      - ./ros2_ws:/root/ros2_ws
 
     environment:
       - DISPLAY=:1
