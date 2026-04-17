@@ -16,6 +16,7 @@ services:
     volumes:
       - ./ros2_ws:/root/ros2_ws
       - ./worlds/perception.sdf:/root/PX4-Autopilot/Tools/simulation/gz/worlds/perception.sdf
+      - ./config/gz_ros_bridge.yaml:/root/config/gz_ros_bridge.yaml
 
     environment:
       - DISPLAY=:1

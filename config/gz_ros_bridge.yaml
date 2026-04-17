@@ -1,0 +1,12 @@
+- gz_topic_name: "/world/perception/model/x500_mono_cam_0/link/camera_link/sensor/camera/image"
+  ros_topic_name: "/drone/camera/image_raw"
+  gz_type_name: "gz.msgs.Image"
+  ros_type_name: "sensor_msgs/msg/Image"
+  direction: GZ_TO_ROS
+
+
+- gz_topic_name: "/world/perception/model/x500_mono_cam_0/link/camera_link/sensor/camera/camera_info"
+  ros_topic_name: "/drone/camera/camera_info"
+  gz_type_name: "gz.msgs.CameraInfo"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  direction: GZ_TO_ROS
