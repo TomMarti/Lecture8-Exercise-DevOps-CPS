@@ -10,7 +10,7 @@ This repo is based on a fork of: [https://github.com/erdemuysalx/px4-sim](https:
 
 ```sh
 chmod +x build.sh
-./build.sh --all
+bash build.sh --all
 ```
 
 2. Start the container

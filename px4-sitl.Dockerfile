@@ -54,6 +54,26 @@ RUN pip3 install --no-cache-dir --break-system-packages \
     lxml
 
 # ============================================================================
+# Install perception dependencies (YOLO + ROS 2 bridges)
+# ============================================================================
+# Pin numpy to 1.x so apt-installed python3-numpy stays compatible with
+# ROS 2 Jazzy's C extensions (cv_bridge, rclpy) while still satisfying
+# ultralytics. --ignore-installed skips the apt-numpy uninstall, which
+# fails because debian packages lack a pip RECORD file.
+RUN pip3 install --no-cache-dir --break-system-packages --ignore-installed \
+    "numpy<2" \
+    "ultralytics>=8.2,<8.4"
+
+# cv_bridge for sensor_msgs/Image <-> OpenCV conversion, vision_msgs for
+# standard detection message types (we still ship our own custom msg, but
+# vision_msgs is a common dep that pulls useful transitive packages).
+RUN apt-get update && apt-get install -y \
+    ros-jazzy-cv-bridge \
+    ros-jazzy-vision-msgs \
+    ros-jazzy-image-transport \
+    && rm -rf /var/lib/apt/lists/*
+
+# ============================================================================
 # Clone and build PX4 Autopilot
 # ============================================================================
 WORKDIR /root
