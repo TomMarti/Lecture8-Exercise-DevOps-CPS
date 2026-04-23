@@ -111,6 +111,8 @@ Latency max    : 104.2 ms
 ```
 
 ### Conclusion
+Technically the Yolo node works well and recognize properly objects on the scene. The performance can probably be improved by linking a GPU.
+
 
 > I believe the TA mentioned that we are free to complete either
 > **Aufgabe 1** or **Aufgabe 2**, or both. I'm submitting Aufgabe 1.
